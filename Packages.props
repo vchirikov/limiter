@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="latest" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemGroup Label="nupkg Versions">
+  </ItemGroup>
+  <ItemGroup Label="Tests nupkg Versions">
+    <PackageReference Update="FluentAssertions" Version="5.10.2" />
+    <PackageReference Update="FakeItEasy" Version="6.0.0" />
+    <PackageReference Update="FakeItEasy.Analyzer.CSharp" Version="6.0.0" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers"/>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Update="xunit" Version="2.4.1" />
+    <PackageReference Update="xunit.analyzers" Version="0.10.0" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
+    <PackageReference Update="xunit.runner.visualstudio" Version="2.4.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
+  </ItemGroup>
+
+</Project>
