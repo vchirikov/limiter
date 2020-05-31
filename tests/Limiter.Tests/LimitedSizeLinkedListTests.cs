@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 
 namespace Limiter.Tests
 {
@@ -11,6 +11,13 @@ namespace Limiter.Tests
                 4
             };
             Assert.Single(list);
+        }
+
+        [Fact]
+        public void Ctor_Should_SetMaxSize()
+        {
+            var list = new LimitedSizeLinkedList<int>(1337);
+            Assert.Equal(1337, list.MaxSize);
         }
 
         [Fact]

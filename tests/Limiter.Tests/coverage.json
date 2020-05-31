@@ -1,0 +1,182 @@
+{
+  "Limiter.dll": {
+    "C:\\code\\vchirikov\\limiter\\src\\Limiter\\LimitedSizeLinkedList.cs": {
+      "Limiter.LimitedSizeLinkedList`1": {
+        "System.Int32 Limiter.LimitedSizeLinkedList`1::get_MaxSize()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.Void Limiter.LimitedSizeLinkedList`1::Add(T)": {
+          "Lines": {
+            "18": 15,
+            "19": 15,
+            "20": 15,
+            "21": 1,
+            "22": 15
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 20,
+              "Offset": 25,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 15
+            }
+          ]
+        },
+        "System.Void Limiter.LimitedSizeLinkedList`1::.ctor(System.Int32)": {
+          "Lines": {
+            "10": 16
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\code\\vchirikov\\limiter\\src\\Limiter\\Limiter.cs": {
+      "Limiter.Limiter": {
+        "System.Void Limiter.Limiter::.ctor(System.Int32,System.TimeSpan,Limiter.ITime)": {
+          "Lines": {
+            "20": 4,
+            "22": 4,
+            "23": 4,
+            "25": 4,
+            "26": 4,
+            "27": 4,
+            "28": 4,
+            "29": 4
+          },
+          "Branches": []
+        }
+      },
+      "Limiter.Limiter/<WaitAsync>d__6": {
+        "System.Void Limiter.Limiter/<WaitAsync>d__6::MoveNext()": {
+          "Lines": {
+            "32": 12,
+            "34": 12,
+            "35": 12,
+            "37": 11,
+            "38": 11,
+            "39": 11,
+            "40": 11,
+            "41": 11,
+            "42": 67,
+            "43": 17,
+            "44": 17,
+            "45": 0,
+            "47": 17,
+            "48": 17,
+            "49": 17,
+            "51": 11,
+            "52": 8,
+            "53": 8,
+            "54": 8,
+            "56": 3,
+            "57": 3,
+            "58": 1,
+            "60": 11,
+            "61": 11,
+            "62": 11,
+            "63": 1,
+            "64": 2,
+            "65": 2,
+            "66": 2,
+            "68": 9
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 392,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 17
+            },
+            {
+              "Line": 44,
+              "Offset": 309,
+              "EndOffset": 313,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 17
+            },
+            {
+              "Line": 47,
+              "Offset": 337,
+              "EndOffset": 339,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 7
+            },
+            {
+              "Line": 47,
+              "Offset": 337,
+              "EndOffset": 362,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 17
+            },
+            {
+              "Line": 44,
+              "Offset": 309,
+              "EndOffset": 381,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 28
+            },
+            {
+              "Line": 42,
+              "Offset": 392,
+              "EndOffset": 394,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 11
+            },
+            {
+              "Line": 51,
+              "Offset": 454,
+              "EndOffset": 456,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 8
+            },
+            {
+              "Line": 51,
+              "Offset": 454,
+              "EndOffset": 485,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "C:\\code\\vchirikov\\limiter\\src\\Limiter\\Time.cs": {
+      "Limiter.SystemTime": {
+        "System.DateTimeOffset Limiter.SystemTime::get_UtcNow()": {
+          "Lines": {
+            "20": 2
+          },
+          "Branches": []
+        },
+        "System.Threading.Tasks.Task Limiter.SystemTime::Delay(System.TimeSpan,System.Threading.CancellationToken)": {
+          "Lines": {
+            "24": 1
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
