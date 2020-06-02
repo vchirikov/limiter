@@ -53,8 +53,9 @@ namespace Limiter
                         _records.Add(now);
                         return;
                     }
-                    var timeToWait = firstInInterval!.Value + _interval - now;
-                    await _time.Delay(timeToWait, cancellationToken).ConfigureAwait(false);
+                    var firstExpired = firstInInterval!.Value + _interval;
+                    await _time.Delay(firstExpired - now, cancellationToken).ConfigureAwait(false);
+                    _records.Add(firstExpired);
                 }
                 finally
                 {
