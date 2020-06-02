@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Limiter.Extensions\Limiter.Extensions.csproj" />
     <ProjectReference Include="..\..\src\Limiter\Limiter.csproj" />
   </ItemGroup>
   <ItemGroup>

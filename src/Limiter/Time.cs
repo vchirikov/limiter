@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Limiter
 {
-    public interface ITime
+    internal interface ITime
     {
         /// <inheritdoc cref="DateTimeOffset.UtcNow" />
         DateTimeOffset UtcNow { get; }
@@ -14,13 +14,17 @@ namespace Limiter
     }
 
 
-    public class SystemTime : ITime
+    internal sealed class SystemTime : ITime
     {
+        public static SystemTime Instance = new SystemTime();
+
         /// <inheritdoc/>
         public DateTimeOffset UtcNow => DateTimeOffset.UtcNow;
 
         /// <inheritdoc/>
         public Task Delay(TimeSpan delay, CancellationToken cancellationToken)
             => Task.Delay(delay, cancellationToken);
+
+        private SystemTime() { }
     }
 }

@@ -17,7 +17,6 @@ namespace Limiter.Tests
             var time = A.Fake<ITime>();
             A.CallTo(() => time.UtcNow).Returns(new DateTimeOffset(new DateTime(2000, 1, 1), default));
 
-
             var limiter = new Limiter(maxCount, interval, time);
 
             await limiter.WaitAsync().ConfigureAwait(false);
@@ -52,7 +51,7 @@ namespace Limiter.Tests
         public async Task WaitAsync_Should_StopTimeDelayOnCancel()
         {
             using var cts = new CancellationTokenSource();
-            var limiter = new Limiter(1, TimeSpan.FromSeconds(10), new SystemTime());
+            var limiter = new Limiter(1, TimeSpan.FromSeconds(10), SystemTime.Instance);
 
             await limiter.WaitAsync(cts.Token).ConfigureAwait(false);
             var task = limiter.WaitAsync(cts.Token);
