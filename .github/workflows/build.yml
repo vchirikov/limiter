@@ -24,12 +24,14 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.301
+      - name: Restore & Restore tools
+        run: dotnet run --project build --configuration Release --no-launch-profile -- --configuration Debug restore restore-tools
       - name: Unit tests
         run: dotnet run --project build --configuration Release --no-launch-profile -- --configuration Debug coverage
       - name: Codecov
         uses: codecov/codecov-action@v1.0.7
         with:
           name: codecov-bot
-          file: ./**/coverage.opencover.xml
+          file: "artifacts/tests/output/coverage.cobertura.xml"
           flags: unit
           fail_ci_if_error: true
