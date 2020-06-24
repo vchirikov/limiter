@@ -2,31 +2,34 @@ name: Build and unit tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.300
-    - name: dotnet restore 
-      run: dotnet restore --ignore-failed-sources
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
-    - name: C# Code Analyzer
-      uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
-      with:
-        # The path where the binaries (.dll and .pdb) are located.
-        binary-path: artifacts/bin
-        # Whether to opt out telemetry collection.
-        opt-out-telemetry: true
-        # Repository name.
-        repository: vchirikov/limiter
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.301
+      - name: Unit tests
+        run: dotnet run --project build --configuration Release --no-launch-profile -- --configuration Debug coverage
+      - name: Run C# Code Analyzer
+        uses: microsoft/CSharpCodeAnalyzer@v0.1-beta
+        id: runcsharpcodeanalyzer
+        with:
+          opt-out-telemetry: true
+          binary-path: 'artifacts/bin'
+          repository: ${{ github.repository }}
+      - name: C# Code Analyzer analysis results
+        run: echo "${{ steps.runcsharpcodeanalyzer.outputs.results }}"
+        - name: Codecov
+        uses: codecov/codecov-action@v1.0.7
+        with:
+          name: codecov-bot
+          file: artifacts/tests/output/coverage.cobertura.xml
+          flags: unit
+          fail_ci_if_error: true

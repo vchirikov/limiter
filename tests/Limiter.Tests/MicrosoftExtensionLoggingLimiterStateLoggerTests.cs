@@ -15,10 +15,9 @@ namespace Limiter.Tests
             foreach (var item in eventIds)
             {
                 if (prevItem != null && prevItem.Value.Id > item.Id)
-                    throw new Exception("GenerateEventIds returned unordered array");
+                    throw new Exception($"{nameof(MicrosoftExtensionLoggingLimiterStateLogger.GenerateEventIds)} returned unordered array");
                 prevItem = item;
             }
         }
     }
-
 }

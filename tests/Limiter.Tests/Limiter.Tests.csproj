@@ -3,8 +3,5 @@
     <ProjectReference Include="..\..\src\Limiter.Extensions\Limiter.Extensions.csproj" />
     <ProjectReference Include="..\..\src\Limiter\Limiter.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="coverlet.msbuild" VersionOverride="2.9.0" />
-  </ItemGroup>
 </Project>
 

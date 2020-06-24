@@ -13,6 +13,7 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <OutputPath>$(SolutionDir)artifacts\</OutputPath>
     <PackageOutputPath>$(SolutionDir)artifacts\nupkg</PackageOutputPath>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <Features>strict;pdb-path-determinism</Features>
     <!-- Rider doesn't support deterministic build with SourceMap -->
     <!-- embedded not recommended yet for libs and nupkg, track this in https://github.com/dotnet/sdk/issues/2679 -->
@@ -33,6 +34,6 @@
     <PathMap>'$(SolutionDir)'=/_/</PathMap>
   </PropertyGroup>
   <ItemGroup Condition="$(DeterministicSourcePaths) == 'true'">
-    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
   </ItemGroup>
 </Project>
