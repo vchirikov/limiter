@@ -76,10 +76,12 @@ namespace Build
                 var resultsDirectory = Path.GetFullPath(Path.Combine("artifacts", "tests", "output"));
                 var cmd = await Cli.Wrap(dotnet)
                     .WithArguments($"test " +
-                    $"--nologo " +
+                    "--nologo " +
                     $"--collect:\"XPlat Code Coverage\" --results-directory {resultsDirectory} " +
                     $"--logger trx;LogFileName=\"{Path.Combine(resultsDirectory, "tests.trx").Replace("\"", "\\\"")}\" " +
-                    $"-c {configuration}")
+                    $"-c {configuration} " +
+                    "-- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=json,opencover"
+                    )
                     .ToConsole()
                     .ExecuteBufferedAsync().Task.ConfigureAwait(false);
 

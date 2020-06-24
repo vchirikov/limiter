@@ -30,6 +30,6 @@ jobs:
         uses: codecov/codecov-action@v1.0.7
         with:
           name: codecov-bot
-          file: artifacts/tests/output/coverage.cobertura.xml
+          file: ./**/coverage.opencover.xml
           flags: unit
           fail_ci_if_error: true
