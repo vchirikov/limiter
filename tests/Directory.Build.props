@@ -6,10 +6,9 @@
     <OutputPath>$(SolutionDir)artifacts\tests</OutputPath>
     <!-- CA1034 - Do not nest type -->
     <!-- CA1822	- Member can be marked as static -->
-    <!-- VSTHRD200 - Use Async suffix for async methods -->
     <!-- RCS1090: Call 'ConfigureAwait(false)' -->
     <!-- CS8604:  Possible null reference argument -->
-    <NoWarn>1701;1702;CA1034;CA1822;VSTHRD200;RCS1090;CS8604;</NoWarn>
+    <NoWarn>1701;1702;CA1034;CA1822;RCS1090;CS8604;</NoWarn>
     <IsPackable>false</IsPackable>
     <IsPublishable>false</IsPublishable>
     <Nullable>annotations</Nullable>

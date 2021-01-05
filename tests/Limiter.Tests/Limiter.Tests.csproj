@@ -3,5 +3,8 @@
     <ProjectReference Include="..\..\src\Limiter.Extensions\Limiter.Extensions.csproj" />
     <ProjectReference Include="..\..\src\Limiter\Limiter.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="*.xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
 
